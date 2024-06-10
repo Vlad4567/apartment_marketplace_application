@@ -1,0 +1,52 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+h1 {
+  font-family: Roboto, sans-serif;
+  font-size: 64px;
+  line-height: 64px;
+  margin: 0;
+}
+
+h2 {
+  font-family: Roboto, sans-serif;
+  font-size: 55px;
+  line-height: 55px;
+  margin: 0;
+}
+
+h3 {
+  font-family: Roboto, sans-serif;
+  font-size: 24px;
+  line-height: 28px;
+  margin: 0;
+}
+
+h4 {
+  font-family: Roboto, sans-serif;
+  font-size: 22px;
+  line-height: 22px;
+  margin: 0;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+
+  line-height: 20px;
+}
+
+small {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+p {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+}

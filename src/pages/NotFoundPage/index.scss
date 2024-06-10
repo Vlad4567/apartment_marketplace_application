@@ -1,0 +1,26 @@
+.not-found-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__wrapper {
+    display: flex;
+    gap: 8px;
+    height: fit-content;
+  }
+
+  &__divider {
+    width: 4px;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    background-color: black;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
