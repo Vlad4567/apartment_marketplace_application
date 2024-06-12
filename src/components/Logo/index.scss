@@ -1,0 +1,21 @@
+@use '../../styles/mixin.scss' as mixin;
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: none;
+  border: none;
+
+  &__img {
+    height: 60px;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+  }
+
+  &__title {
+    font-weight: 700;
+    color: mixin.$gray100;
+  }
+}

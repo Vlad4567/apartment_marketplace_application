@@ -1,0 +1,41 @@
+$gray100: #ffffff;
+$gray80: #f5f7f9;
+$gray70: #edeff3;
+$gray50: #d0d1d8;
+$gray30: #a09fa6;
+$gray20: #5c5c60;
+$gray15: #323232;
+$gray10: #1a1b1e;
+$gray5: #141414;
+//
+$tablet-min-width: 640px;
+$desktop-min-width: 1200px;
+//
+$effect-duration: 150ms;
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin content-padding {
+  padding-block: var(--content-padding-block);
+  padding-inline: var(--content-padding-inline);
+
+  @include on-tablet {
+    --content-padding-block: 20px;
+    --content-padding-inline: 80px;
+  }
+
+  @include on-desktop {
+    --content-padding-block: 20px;
+    --content-padding-inline: 162px;
+  }
+}

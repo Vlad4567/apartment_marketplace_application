@@ -1,0 +1,22 @@
+@use '../../styles/mixin.scss' as mixin;
+
+.button {
+  padding: 16px 24px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+
+  color: mixin.$gray15;
+  background-color: #FEC92D;
+  transition-behavior: background-color transform;
+  transition-duration: mixin.$effect-duration;
+
+  &:hover {
+    background-color: #d4a926;
+  }
+
+  &:not(:disabled):active {
+    transform: scale(0.95);
+    background-color: #b8931f;
+  }
+}

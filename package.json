@@ -14,11 +14,15 @@
     "react-hook-form": "^7.51.5",
     "react-router-dom": "^6.23.1",
     "react-scripts": "5.0.1",
+    "react-transition-group": "^4.4.5",
     "typescript": "^4.9.5",
     "usehooks-ts": "^3.1.0",
+    "uuid": "^10.0.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@types/react-transition-group": "^4.4.10",
+    "@types/uuid": "^9.0.8",
     "@typescript-eslint/parser": "^7.12.0",
     "eslint": "^8.57.0",
     "eslint-config-airbnb-typescript": "^18.0.0",

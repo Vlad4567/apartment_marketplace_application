@@ -1,3 +1,4 @@
+@use './styles/mixin.scss' as mixin;
 @import url('./styles/main.scss');
 
 * {
@@ -11,8 +12,8 @@ main {
 
   display: flex;
   flex-direction: column;
+  @include mixin.content-padding;
 }
-
 
 input,
 textarea,
@@ -22,10 +23,16 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+button {
+  cursor: pointer;
+}
+
 body {
+  margin: 0;
   min-height: 100vh;
 
   display: flex;
+  background-color: mixin.$gray10;
 }
 
 #root {

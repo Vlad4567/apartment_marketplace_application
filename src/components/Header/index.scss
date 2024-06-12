@@ -1,0 +1,52 @@
+@use '../../styles/mixin.scss' as mixin;
+
+.header {
+  position: relative;
+  z-index: 10000;
+
+  border-bottom: 1px solid mixin.$gray15;
+  background-color: mixin.$gray10;
+
+  @include mixin.content-padding;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    list-style: none;
+  }
+
+  &__create-rent-modal {
+    position: absolute;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+
+    &.enter {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+
+    &.enter-active {
+      opacity: 1;
+      transform: translateY(0);
+      transition-behavior: opacity transform;
+      transition-duration: 700ms;
+    }
+
+    &.exit {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &.exit-active {
+      opacity: 0;
+      transform: translateY(-100%);
+      transition-behavior: opacity transform;
+      transition-duration: 700ms;
+    }
+  }
+}
