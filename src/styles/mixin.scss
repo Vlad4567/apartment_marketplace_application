@@ -12,6 +12,8 @@ $tablet-min-width: 640px;
 $desktop-min-width: 1200px;
 //
 $effect-duration: 150ms;
+$line-width: 1px;
+$border-radius: 8px;
 
 @mixin on-tablet {
   @media (min-width: $tablet-min-width) {

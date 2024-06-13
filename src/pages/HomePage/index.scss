@@ -1,0 +1,108 @@
+@use '../../styles/mixin.scss' as mixin;
+
+.home-page {
+  &__apartments {
+    height: 100%;
+    width: 100%;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__apartments-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__apartments-title {
+    color: mixin.$gray100;
+    font-size: xx-large;
+  }
+
+  &__apartments-filter {
+    height: 50px;
+    display: flex;
+
+    border: mixin.$line-width solid mixin.$gray15;
+    border-radius: mixin.$border-radius;
+  }
+
+  &__apartments-sort-by-dropdown {
+    padding: 15px;
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    border: mixin.$line-width solid mixin.$gray15;
+    background-color: rgba(50, 50, 50, 0.6);
+    backdrop-filter: blur(15px);
+  }
+
+  &__apartments-sort-by-dropdown-option {
+    padding: 7px;
+    background: none;
+    color: mixin.$gray100;
+
+    border: none;
+    border-radius: mixin.$border-radius;
+    font-size: medium;
+
+    &:hover,
+    &--active {
+      background-color: mixin.$gray20;
+    }
+
+    &--active {
+      pointer-events: none;
+    }
+  }
+
+  &__apartments-sort-by {
+    height: 100%;
+
+    background: none;
+    color: mixin.$gray50;
+
+    border-top-left-radius: mixin.$border-radius;
+    border-bottom-left-radius: mixin.$border-radius;
+    border: none;
+    border-right: 1px solid mixin.$gray15;
+
+    font-size: larger;
+    transition: background mixin.$effect-duration;
+
+    &:hover {
+      background-color: mixin.$gray15;
+    }
+
+    &:not(:disabled):active {
+      background-color: mixin.$gray20;
+    }
+
+    &--active {
+      background-color: mixin.$gray15;
+    }
+  }
+
+  &__apartments-filter-rooms {
+    height: 100%;
+    padding-inline: 10px;
+    background: none;
+    color: mixin.$gray50;
+    font-size: large;
+    border: none;
+    outline: none;
+  }
+
+  &__apartments-empty-list-title {
+    margin: auto;
+    color: mixin.$gray100;
+  }
+}

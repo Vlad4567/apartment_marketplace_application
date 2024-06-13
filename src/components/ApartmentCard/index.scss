@@ -1,0 +1,114 @@
+@use '../../styles/mixin.scss' as mixin;
+
+$padding: 30px 50px;
+
+.apartment-card {
+  height: fit-content;
+  border: mixin.$line-width solid mixin.$gray15;
+
+  &__list {
+    padding: $padding;
+
+    display: grid;
+    grid-template-columns: 3fr 4fr 1fr;
+
+    list-style: none;
+  }
+
+  &__list-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    color: mixin.$gray100;
+
+    &:nth-child(2) {
+      justify-content: center;
+    }
+
+    &:last-child {
+      justify-content: end;
+    }
+  }
+
+  &__rooms {
+    text-align: center;
+  }
+
+  &__price {
+    text-align: center;
+  }
+
+  &__img-wrapper {
+    height: 70px;
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(#101113, #ffffff09);
+    border-radius: mixin.$border-radius;
+  }
+
+  &__img {
+    height: 30px;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+  }
+
+  &__title {
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__rent {
+    background: none;
+    border: none;
+  }
+
+  &__rent-img {
+    height: 25px;
+    aspect-ratio: 1 / 1;
+  }
+
+  &__delete {
+    background: none;
+    border: none;
+    transform: rotate(45deg);
+  }
+
+  &__description {
+    padding: $padding;
+
+    background-color: mixin.$gray15;
+  }
+
+  &__description-text {
+    color: mixin.$gray100;
+  }
+
+  &__toggle-dropdown {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    background-color: mixin.$gray15;
+    border: none;
+
+    &:hover .apartment-card__toggle-dropdown-img:is(:not(.apartment-card__toggle-dropdown-img--active)) {
+      transform: translateY(4px);
+    }
+  }
+
+  &__toggle-dropdown-img {
+    width: 35px;
+    aspect-ratio: 1 / 1;
+
+    transition: transform mixin.$effect-duration;
+
+    &--active {
+      transform: rotate(180deg);
+    }
+  }
+}

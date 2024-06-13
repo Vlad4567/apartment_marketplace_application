@@ -4,7 +4,7 @@
   position: relative;
   z-index: 10000;
 
-  border-bottom: 1px solid mixin.$gray15;
+  border-bottom: mixin.$line-width solid mixin.$gray15;
   background-color: mixin.$gray10;
 
   @include mixin.content-padding;
