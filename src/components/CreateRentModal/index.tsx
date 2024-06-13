@@ -10,6 +10,13 @@ import { localStorageKeys } from '../../helpers/variables';
 import * as uuid from 'uuid';
 import './index.scss';
 
+const handleNumberInput = (e: React.FormEvent<HTMLInputElement>) => {
+  const value = e.currentTarget.value.replace(/\D/g, '');
+
+  // eslint-disable-next-line no-param-reassign
+  e.currentTarget.value = value;
+};
+
 interface Props extends React.HTMLAttributes<HTMLDivElement> {}
 
 export const CreateRentModal = forwardRef<HTMLDivElement, Props>(
@@ -31,13 +38,6 @@ export const CreateRentModal = forwardRef<HTMLDivElement, Props>(
       setApartments(prev => [...prev, { ...apartment, id: uuid.v4() }]);
       reset();
     });
-
-    const handleNumberInput = (e: React.FormEvent<HTMLInputElement>) => {
-      const value = e.currentTarget.value.replace(/\D/g, '');
-
-      // eslint-disable-next-line no-param-reassign
-      e.currentTarget.value = value;
-    };
 
     return (
       <div
