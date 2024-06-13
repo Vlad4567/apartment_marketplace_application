@@ -7,7 +7,7 @@ import { CSSTransition } from 'react-transition-group';
 import { CreateRentModal } from '../CreateRentModal';
 import { createPortal } from 'react-dom';
 import { useRef } from 'react';
-import { useResizeObserver } from 'usehooks-ts';
+import { useResizeObserver, useScrollLock } from 'usehooks-ts';
 import './index.scss';
 
 export const Header: React.FC = () => {
@@ -17,6 +17,9 @@ export const Header: React.FC = () => {
     ref: headerRef,
     box: 'border-box',
   });
+  const { lock, unlock } = useScrollLock({
+    autoLock: false,
+  });
 
   const setSearchWith = (params: SearchWithParams) => {
     const search = getSearchWith(params, searchParams);
@@ -25,9 +28,18 @@ export const Header: React.FC = () => {
   };
 
   const handleCreateRent = () => {
-    setSearchWith({
-      modal: searchParams.get('modal') === 'create-rent' ? null : 'create-rent',
-    });
+    window.scrollTo({ top: 0, left: 0 });
+    if (searchParams.get('modal') === 'create-rent') {
+      setSearchWith({
+        modal: null,
+      });
+      unlock();
+    } else {
+      setSearchWith({
+        modal: 'create-rent',
+      });
+      lock();
+    }
   };
 
   return (
