@@ -1,18 +1,30 @@
+@use '../../styles/mixin.scss' as mixin;
+
 .not-found-page {
   display: flex;
   align-items: center;
   justify-content: center;
 
   &__wrapper {
+    height: fit-content;
     display: flex;
     gap: 8px;
-    height: fit-content;
+  }
+
+  &__text {
+    &:nth-child(1) {
+      color: #FEC92D;
+    }
+
+    &:nth-child(3) {
+      color: #005eb8;
+    }
   }
 
   &__divider {
     width: 4px;
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    background-color: black;
+    background-color: mixin.$gray100;
   }
 }
 
