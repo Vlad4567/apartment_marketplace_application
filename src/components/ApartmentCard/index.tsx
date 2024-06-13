@@ -9,12 +9,14 @@ import './index.scss';
 
 interface Props {
   apartment: Apartment;
+  type?: 'default' | 'rent';
   onDelete?: (apartment: Apartment) => void;
   onRent?: (apartment: Apartment) => void;
 }
 
 export const ApartmentCard: React.FC<Props> = ({
   apartment,
+  type = 'default',
   onDelete = () => {},
   onRent = () => {},
 }) => {
@@ -47,17 +49,19 @@ export const ApartmentCard: React.FC<Props> = ({
           </p>
         </li>
         <li className="apartment-card__list-item">
-          <button
-            type="button"
-            className="apartment-card__rent"
-            onClick={() => onRent(apartment)}
-          >
-            <img
-              className="apartment-card__rent-img"
-              src={rentIcon}
-              alt="Dropdown description"
-            />
-          </button>
+          {type !== 'rent' && (
+            <button
+              type="button"
+              className="apartment-card__rent"
+              onClick={() => onRent(apartment)}
+            >
+              <img
+                className="apartment-card__rent-img"
+                src={rentIcon}
+                alt="Dropdown description"
+              />
+            </button>
+          )}
           <button
             type="button"
             className="apartment-card__delete"

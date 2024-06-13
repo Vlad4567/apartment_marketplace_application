@@ -1,6 +1,21 @@
 @use '../../styles/mixin.scss' as mixin;
 
 .home-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__current-rent {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__current-rent-title {
+    color: mixin.$gray100;
+    font-size: xx-large;
+  }
+
   &__apartments {
     height: 100%;
     width: 100%;

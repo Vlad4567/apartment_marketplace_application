@@ -5,6 +5,7 @@ import { ApartmentCard } from '../../components/ApartmentCard';
 import { useEffect, useState } from 'react';
 import { ApartmentsHeader } from './ApartmentsHeader';
 import './index.scss';
+import { CurrentRent } from './CurrentRent';
 
 export const HomePage: React.FC = () => {
   const [apartments, setApartments] = useLocalStorage<Apartment[]>(
@@ -42,6 +43,12 @@ export const HomePage: React.FC = () => {
 
   return (
     <main className="home-page">
+      {rentApartment && (
+        <CurrentRent
+          rentApartment={rentApartment}
+          setRentApartment={setRentApartment}
+        />
+      )}
       <div className="home-page__apartments">
         {!!apartments.length && (
           <ApartmentsHeader
